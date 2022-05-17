@@ -1,0 +1,72 @@
+
+<div class="container">
+    <mat-card>
+        <h3>Patient Details</h3>
+        <form #medicalRecordsForm="ngForm" class="form-horizontal">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Surname</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>ID Number</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Procedure Codes</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>ICD10 Codes</mat-label>
+                <input matInput>
+            </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Doctor Practice No</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Hospital Practice No</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Admission Date</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Main Member</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <button type="submit" id="create-btn" class="btn btn-success" name="create">Submit</button>
+        </form>
+
+        <input type="file" class="file-input"
+        (change)="onFileSelected($event)" #fileUpload multiple>
+    
+    <div class="file-upload">
+    
+    {{fileName || "No file uploaded yet."}}
+    
+     <button mat-mini-fab color="primary" class="upload-btn"
+       (click)="fileUpload.click()">
+         <mat-icon>attach_file</mat-icon>
+    
+     </button>
+    
+    </div>
+    
+    <div class="progress">
+    
+    <mat-progress-bar class="progress-bar" mode="determinate"
+                     [value]="uploadProgress" *ngIf="uploadProgress">
+    
+    </mat-progress-bar>
+    
+    </div>
+    </mat-card>
+</div>
+
+
+
